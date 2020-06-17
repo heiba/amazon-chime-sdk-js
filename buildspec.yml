@@ -1,0 +1,11 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+  post_build:
+    commands:
+      - cd demos/serverless
+      - npm install
+      - npm run deploy -- -r eu-west-1 -b heibam-chime-serverless-demo -s chime-serverless-demo -a meeting
